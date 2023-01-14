@@ -30,7 +30,7 @@ public class AddressResource {
 	
 	@GetMapping(value="/{id}")
 	public ResponseEntity<Address> findById(@PathVariable Long id){
-		Address Address = addressRepository.findById(id);
+		Address Address = addressRepository.findById(id).get();
 		return ResponseEntity.ok().body(Address);
 	}
 

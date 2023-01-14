@@ -13,7 +13,7 @@ import com.attornatus.dareattor.entity.People;
 import com.attornatus.dareattor.repositories.PeopleRepository;
 
 @RestController
-@RequestMapping(value = "/categories")
+@RequestMapping(value = "/peoples")
 public class PeopleResource {
 	
 	@Autowired
@@ -30,7 +30,7 @@ public class PeopleResource {
 	
 	@GetMapping(value="/{id}")
 	public ResponseEntity<People> findById(@PathVariable Long id){
-		People people = peopleRepository.findById(id);
+		People people = peopleRepository.findById(id).get();
 		return ResponseEntity.ok().body(people);
 	}
 

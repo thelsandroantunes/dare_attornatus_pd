@@ -3,6 +3,14 @@ package com.attornatus.dareattor.entity;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Address implements Serializable{
 	
 	/**
@@ -10,14 +18,19 @@ public class Address implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	private String street;
 	private String zipcode;
 	private String number;
 	private String city;
+	
+	@ManyToOne
+	@JoinColumn(name="people_id")
 	private People people;
 	
+	public Address() {}
 	
 	public Address(Long id, String street, String zipcode, String number, String city, People people) {
 		super();

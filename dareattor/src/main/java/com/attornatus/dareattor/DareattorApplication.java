@@ -29,13 +29,13 @@ public class DareattorApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		People p1 = new People(1L, "Abadias Source", new Date());
-		People p2 = new People(2L, "Thelsandro Antunes", new Date());
+		People p1 = new People(null, "Abadias Source", new Date());
+		People p2 = new People(null, "Thelsandro Antunes", new Date());
 		
-		Address ad1 = new Address(1L, "Rua Leopoldo Bayma","69088-087","133", "Manaus", p2); 
-		Address ad2 = new Address(2L, "Rua A","69000-011","001", "Rio de Janeiro", p1);
-		Address ad3 = new Address(3L, "Rua Leopoldo Bayma","69021-095","002", "Manaus", p2);
-		Address ad4 = new Address(4L, "Rua São Gonçalo","69022-000","453", "Rio de Janeiro", p1);
+		Address ad1 = new Address(null, "Rua Leopoldo Bayma","69088-087","133", "Manaus", p2); 
+		Address ad2 = new Address(null, "Rua A","69000-011","001", "Rio de Janeiro", p1);
+		Address ad3 = new Address(null, "Rua Leopoldo Bayma","69021-095","002", "Manaus", p2);
+		Address ad4 = new Address(null, "Rua São Gonçalo","69022-000","453", "Rio de Janeiro", p1);
 		
 		p1.getAddress().addAll(Arrays.asList(ad2,ad4));
 		p2.getAddress().addAll(Arrays.asList(ad1,ad3));
