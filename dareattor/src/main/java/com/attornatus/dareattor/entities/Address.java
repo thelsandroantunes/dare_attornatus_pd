@@ -1,4 +1,4 @@
-package com.attornatus.dareattor.entity;
+package com.attornatus.dareattor.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -22,25 +22,30 @@ public class Address implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String street;
-	private String zipcode;
 	private String number;
+	private String zipcode;	
+
 	private String city;
+	private Boolean first;
 	
+
 	@ManyToOne
 	@JoinColumn(name="people_id")
 	private People people;
 	
 	public Address() {}
 	
-	public Address(Long id, String street, String zipcode, String number, String city, People people) {
+	public Address(Long id, String street, String number, String zipcode, String city, Boolean first, People people) {
 		super();
 		this.id = id;
 		this.street = street;
-		this.zipcode = zipcode;
 		this.number = number;
+		this.zipcode = zipcode;
 		this.city = city;
+		this.first = first;
 		this.people = people;
 	}
+	
 	public People getPeople() {
 		return people;
 	}
@@ -77,8 +82,21 @@ public class Address implements Serializable{
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
-	
+	public Boolean getFirst() {
+		return first;
+	}
+
+	public void setFirst(Boolean first) {
+		this.first = first;
+	}
+	@Override
+    public String toString() {
+        return "Logradouro: " + street + 
+                "N°='" + number + 
+                "Cidade" + city + 
+                "CEP: " + zipcode
+               ;
+    }
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

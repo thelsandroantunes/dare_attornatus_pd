@@ -8,8 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.attornatus.dareattor.entity.Address;
-import com.attornatus.dareattor.entity.People;
+import com.attornatus.dareattor.entities.Address;
+import com.attornatus.dareattor.entities.People;
 import com.attornatus.dareattor.repositories.AddressRepository;
 import com.attornatus.dareattor.repositories.PeopleRepository;
 
@@ -32,10 +32,10 @@ public class DareattorApplication implements CommandLineRunner{
 		People p1 = new People(null, "Abadias Source", new Date());
 		People p2 = new People(null, "Thelsandro Antunes", new Date());
 		
-		Address ad1 = new Address(null, "Rua Leopoldo Bayma","69088-087","133", "Manaus", p2); 
-		Address ad2 = new Address(null, "Rua A","69000-011","001", "Rio de Janeiro", p1);
-		Address ad3 = new Address(null, "Rua Leopoldo Bayma","69021-095","002", "Manaus", p2);
-		Address ad4 = new Address(null, "Rua São Gonçalo","69022-000","453", "Rio de Janeiro", p1);
+		Address ad1 = new Address(null, "Rua Leopoldo Bayma","133","69088-087", "Manaus",true, p2);
+		Address ad2 = new Address(null, "Rua A","001","69000-011", "Rio de Janeiro",true, p1);
+		Address ad3 = new Address(null, "Rua Leopoldo Bayma","002","69021-095", "Manaus",false, p2);
+		Address ad4 = new Address(null, "Rua São Gonçalo","453","69022-000", "Rio de Janeiro",false, p1);
 		
 		p1.getAddress().addAll(Arrays.asList(ad2,ad4));
 		p2.getAddress().addAll(Arrays.asList(ad1,ad3));

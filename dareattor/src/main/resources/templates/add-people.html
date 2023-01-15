@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Nova Pessoa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+<body>
+ <div class="container my-5">
+        <h3> Adicionar Pessoa</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{}" th:object="${people}"
+                                                                       method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Nome</label> 
+                                <input type="text" th:field="*{name}" class="form-control"
+                                            id="name" placeholder="Nome Completo" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Data de Nascimento</label> 
+                                <input type="date" th:field="*{birthDate}" class="form-control"
+                                            id="birth" placeholder="Data de Nascimento" />
+                            </div>
+
+							<div class="form-group col-md-8">
+								<label for="name" class="col-form-label">Logradouro</label>
+								<input type="text" class="form-control" name="logradouro" placeholder="Rua/Avenida/Estrado/etc.."/>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="name" class="col-form-label">Número</label>
+								<input type="text" class="form-control" name="num" placeholder="Número Residencial"/>
+							</div>
+
+							<div class="form-group col-md-8">
+								<label for="name" class="col-form-label">CEP</label>
+								<input type="text" class="form-control" name="cep" placeholder="00000-000"/>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="name" class="col-form-label">Cidade</label>								
+								<input type="text" class="form-control" name="cidade" placeholder="Cidade"/>
+							</div>	
+
+							<div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value=" Submit ">
+                            </div>
+ 
+                            <input type="hidden" id="id" th:field="*{id}">
+     
+						</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
